@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade">
+		<name>raspSearch</name> 
+		<creationDate>Февраль 2016</creationDate>
+		<author>XAKEPok</author>
+		<authorEmail>xakepok@xakepok.com</authorEmail>
+		<authorUrl>http://www.xakepok.com</authorUrl>
+		<copyright>XAKEPok</copyright>
+		<license>Убежим и не заплатим!</license>
+        <version>1.0.0.0</version>
+        <description>MOD_RASPSEARCH</description>
+        <files>
+                <filename module="mod_raspsearch">mod_raspsearch.php</filename>
+                <filename>mod_raspSearch.xml</filename>
+				<filename>index.html</filename>
+				<folder>languages</folder>
+        </files>
+		<languages folder="languages">
+			<language tag="ru-RU">languages/ru-RU/ru-RU.mod_raspSearch.ini</language>
+			<language tag="ru-RU">languages/ru-RU/ru-RU.mod_raspSearch.sys.ini</language>
+		</languages>		
+</extension>

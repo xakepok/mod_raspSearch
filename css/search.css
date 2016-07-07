@@ -1,0 +1,21 @@
+.div_station_search {
+	display:none;
+	position:absolute;
+	background:#C4FFC4;
+	border:1px solid #333;
+}
+.li_station {
+	cursor:pointer;
+	padding-right:5px;
+	padding-left:-5px;
+	list-style:none;
+	
+}
+.li_station:HOVER {
+	background:#008A00;
+	color:#F00;
+	text-decoration:underline;
+}
+.ul_station {
+	background:#C4FFC4;
+}
