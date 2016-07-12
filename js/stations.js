@@ -14,8 +14,10 @@ function station_search(text, tip) {
 function display_stations(result, tip) {
 	jQuery("#div_"+tip).hide();
 	jQuery("#ul_"+tip+" > li").remove();
+	var name = '';
 	for (var i=0; i< result.length; i++) {
-		jQuery("#ul_"+tip).append('<li class="li_station" onclick="select_station(\''+result[i].id+'\', \''+result[i].name+'\', \''+tip+'\')">'+result[i].name+' ('+result[i].road+' ЖД)</li>');
+		name = result[i].popularName == '' ? result[i].name : result[i].popularName;
+		jQuery("#ul_"+tip).append('<li class="li_station" onclick="select_station(\''+result[i].id+'\', \''+result[i].name+'\', \''+tip+'\')">'+name+' ('+result[i].road+' ЖД)</li>');
 	}
 	
 	jQuery("#div_"+tip).show();

@@ -2,8 +2,8 @@
 defined('_JEXEC') or die('');
 $doc =& JFactory::getDocument();
 $jinput = JFactory::getApplication()->input;
-$doc->addScript(JURI::base().'modules/mod_raspsearch/js/stations.js');
-$doc->addStyleSheet(JURI::base().'modules/mod_raspsearch/css/search.css');
+$doc->addScript(JURI::base().'media/mod_raspSearch/js/stations.js');
+$doc->addStyleSheet(JURI::base().'media/mod_raspSearch/css/search.css');
 $from_id = $jinput->getString('from_id', '');
 $to_id = $jinput->getString('to_id', '');
 $from = $jinput->getString('from', '');
@@ -12,9 +12,7 @@ $date = $jinput->getString('date', '');
 if (!empty($from_id) && !empty($to_id) && !empty($from) && !empty($to) && !empty($date)) $need = true; else $need = false;
 ?>
 <div>
- <form action="/index.php" method="get">
- <input type="hidden" name="option" value="com_rasp" />
- <input type="hidden" name="view" value="search" />
+ <form action="/rasp/search/" method="get">
  <input type="hidden" name="from_id" id="from_id" value="<?php if ($need) echo $from_id; ?>" />
  <input type="hidden" name="to_id" id="to_id" value="<?php if ($need) echo $to_id; ?>" />
  <table>

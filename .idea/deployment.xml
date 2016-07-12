@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="Elektrichking_ftp">
+    <serverData>
+      <paths name="Elektrichking_ftp">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/modules/mod_raspsearch" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/media/mod_raspSearch/css" local="$PROJECT_DIR$/css" />
+            <mapping deploy="/media/mod_raspSearch/js" local="$PROJECT_DIR$/js" />
+            <mapping deploy="/language/ru-RU" local="$PROJECT_DIR$/languages/ru-RU" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
+  </component>
+</project>
