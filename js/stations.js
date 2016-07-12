@@ -1,6 +1,6 @@
 function station_search(text, tip) {
 	if (text.length > 1) {
-		jQuery.getJSON("/index.php?option=com_rasp&view=station_search&station="+encodeURIComponent(text), function(data) {
+		jQuery.getJSON("index.php?option=com_rasp&view=station_search&station="+encodeURIComponent(text), function(data) {
 			if (data.length > 0) {
 				display_stations(data, tip);
 			}
