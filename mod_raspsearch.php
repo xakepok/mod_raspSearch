@@ -11,19 +11,19 @@ $to = $jinput->getString('to', '');
 $date = $jinput->getString('date', '');
 if (!empty($from_id) && !empty($to_id) && !empty($from) && !empty($to) && !empty($date)) $need = true; else $need = false;
 ?>
-<div>
+<div style="width: 100%;">
  <form action="/rasp/search/" method="get">
  <input type="hidden" name="from_id" id="from_id" value="<?php if ($need) echo $from_id; ?>" />
  <input type="hidden" name="to_id" id="to_id" value="<?php if ($need) echo $to_id; ?>" />
- <table>
+ <table style="width: 100%;">
   <tr><td>
-   <input type="text" id="rasp_from" name="from" value="<?php if ($need) echo $from; ?>" placeholder="Откуда едем" onkeyup="station_search(this.value, 'from')" />
+   <input type="text" id="rasp_from" name="from" value="<?php if ($need) echo $from; ?>" placeholder="Откуда едем" autocomplete="off" onkeyup="station_search(this.value, 'from')" />
    <div id="div_from" class="div_station_search">
     <ul id="ul_from" class="ul_station"></ul>
    </div>
   </td></tr>
   <tr><td>
-   <input type="text" id="rasp_to" name="to" value="<?php if ($need) echo $to; ?>" placeholder="Куда едем" onkeyup="station_search(this.value, 'to')" />
+   <input type="text" id="rasp_to" name="to" value="<?php if ($need) echo $to; ?>" placeholder="Куда едем" autocomplete="off" onkeyup="station_search(this.value, 'to')" />
   </td></tr>
   <tr><td>
    <input type="date" name="date" value="<?php if ($need) echo $date; else echo date("Y-m-d"); ?>" />

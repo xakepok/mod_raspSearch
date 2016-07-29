@@ -3,6 +3,8 @@
 	position:absolute;
 	background:#C4FFC4;
 	border:1px solid #333;
+	max-height: 400px;
+	overflow: auto;
 }
 .li_station {
 	cursor:pointer;
@@ -13,9 +15,12 @@
 }
 .li_station:HOVER {
 	background:#008A00;
-	color:#F00;
+	color: #fffafe;
 	text-decoration:underline;
 }
 .ul_station {
 	background:#C4FFC4;
+}
+input#rasp_from,input#rasp_to {
+	width: 90%;
 }

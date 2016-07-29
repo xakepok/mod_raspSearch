@@ -16,8 +16,8 @@ function display_stations(result, tip) {
 	jQuery("#ul_"+tip+" > li").remove();
 	var name = '';
 	for (var i=0; i< result.length; i++) {
-		name = result[i].popularName == '' ? result[i].name : result[i].popularName;
-		jQuery("#ul_"+tip).append('<li class="li_station" onclick="select_station(\''+result[i].id+'\', \''+result[i].name+'\', \''+tip+'\')">'+name+' ('+result[i].road+' ЖД)</li>');
+		name = result[i].popularName == null ? result[i].name : result[i].popularName;
+		jQuery("#ul_"+tip).append('<li class="li_station" onclick="select_station(\''+result[i].id+'\', \''+name+'\', \''+tip+'\')">'+name+' ('+result[i].road+' ЖД)</li>');
 	}
 	
 	jQuery("#div_"+tip).show();
