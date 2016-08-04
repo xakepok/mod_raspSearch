@@ -11,7 +11,6 @@
 	padding-right:5px;
 	padding-left:5px;
 	list-style:none;
-	
 }
 .li_station:HOVER {
 	background:#008A00;
@@ -23,4 +22,10 @@
 }
 input#rasp_from,input#rasp_to {
 	width: 90%;
+}
+.historySearchLink {
+	font-size: 0.8em;
+}
+.historySearchLi {
+	margin:  2px 0px;
 }

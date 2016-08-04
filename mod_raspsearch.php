@@ -10,6 +10,19 @@ $from = $jinput->getString('from', '');
 $to = $jinput->getString('to', '');
 $date = $jinput->getString('date', '');
 if (!empty($from_id) && !empty($to_id) && !empty($from) && !empty($to) && !empty($date)) $need = true; else $need = false;
+$user = JFactory::getUser();
+if (!$user->guest) {
+  $db = JFactory::getDbo();
+   $query = "SELECT `h`.*, `s1`.`name` as `from`, `s1`.`popularName` as `popularFrom`, `s2`.`name` as `to`, `s2`.`popularName` as `popularTo`
+				FROM `#__rasp_search_history` as `h`
+				LEFT JOIN `#__station_list` as `s1` ON (`h`.`from_id`=`s1`.`id`)
+				LEFT JOIN `#__station_list` as `s2` ON (`h`.`to_id`=`s2`.`id`)
+				WHERE `h`.`uid`=".$db->quote($user->id)."
+				ORDER BY `h`.`counter` DESC
+				LIMIT 3";
+   $db->setQuery($query);
+   $lastSearch = $db->loadObjectList();
+}
 ?>
 <div style="width: 100%;">
  <form action="/rasp/search/" method="get">
@@ -31,6 +44,28 @@ if (!empty($from_id) && !empty($to_id) && !empty($from) && !empty($to) && !empty
     <ul id="ul_to" class="ul_station"></ul>
    </div>
   </td></tr>
+  <tr>
+   <td>
+     <?php if (!$user->guest && !empty($lastSearch[0])) {
+      ?> <ul> <?php
+      foreach ($lastSearch as $popular) {
+       $from = $popular->popularFrom == null ? $popular->from : $popular->popularFrom;
+       $to = $popular->popularTo == null ? $popular->to : $popular->popularTo;
+       $url = JRoute::_("index.php?option=com_rasp&view=search&from_id=".$popular->from_id."&to_id=".$popular->to_id."&from=".$from."&to=".$to."&date=".date('Y-m-d'));
+       ?>
+       <li class="historySearchLi"><a href="<?=$url?>" target="_blank" class="historySearchLink"><?=$from.' - '.$to?></a></li>
+       <?php
+      }
+      ?></ul><?php
+     } if ($user->guest) {
+        echo 'История поиска сохряняется только у зарегистрированных пользователей. Зарегистрируйтесь для того, чтобы получить все преимущества нашего сервиса.';
+     }
+     if (empty($lastSearch[0])) {
+        echo 'Вы ещё ничего не искали';
+     }
+     ?>
+   </td>
+  </tr>
   <tr><td>
    <input type="submit" value="Поехали!" />
   </td></tr>
