@@ -41,7 +41,7 @@ if (!$user->guest) {
   </td></tr>
   <tr><td class="rasp_form_search_td">
    <input type="date" name="date" value="<?php if ($need) echo $date; else echo $serverDate; ?>" min="<?=$serverDate?>" />
-    <span class="obratno">Обратно</span>
+    <span class="obratno" onclick="obratno()">Обратно</span>
    <div id="div_to" class="div_station_search">
     <ul id="ul_to" class="ul_station"></ul>
    </div>
