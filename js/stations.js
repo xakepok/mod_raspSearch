@@ -28,3 +28,15 @@ function select_station(id, name, tip) {
 	jQuery("#rasp_"+tip).val(name);
 	jQuery("#div_"+tip).hide();
 }
+jQuery(document).ready(function (e) {
+	jQuery(".obratno").bind('click', function (ee) {
+		var fromID = jQuery("#from_id").val();
+		var toID = jQuery("#to_id").val();
+		var from = jQuery("#rasp_from").val();
+		var to = jQuery("#rasp_to").val();
+		jQuery("#from_id").val(toID);
+		jQuery("#to_id").val(fromID);
+		jQuery("#rasp_from").val(to);
+		jQuery("#rasp_to").val(from);
+	})
+});

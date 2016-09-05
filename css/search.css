@@ -29,3 +29,18 @@ input#rasp_from,input#rasp_to {
 .historySearchLi {
 	margin:  2px 0px;
 }
+.rasp_form_search {
+	border: none;
+	width: 100%;
+	background: none;
+}
+.rasp_form_search_td {
+	border: none;
+}
+.obratno {
+	font-style: italic;
+	font-size: 0.8em;
+	margin-left: 10px;
+	border-bottom: 1px dashed #008A00;
+	cursor: pointer;
+}
